@@ -4,6 +4,7 @@ import android.app.Activity
 import android.os.Bundle
 import com.example.numeron.databinding.ActivityNumberSelectionBinding
 
+/** 数字決定画面 */
 class NumberSelectionActivity : Activity() {
 
     private lateinit var binding: ActivityNumberSelectionBinding
