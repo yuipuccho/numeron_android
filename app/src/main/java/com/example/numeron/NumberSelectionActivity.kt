@@ -16,4 +16,15 @@ class NumberSelectionActivity : Activity() {
         val view = binding.root
         setContentView(view)
     }
+
+    override  fun onResume() {
+        super.onResume()
+        setupUI()
+    }
+
+    private fun setupUI() {
+        binding.button.height = 10
+        val a = binding.button.height
+        println("aaaaaa${a}")
+    }
 }
