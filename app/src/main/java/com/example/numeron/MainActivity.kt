@@ -1,11 +1,27 @@
 package com.example.numeron
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import com.example.numeron.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : Activity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        // バインディング
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+
+        // ボタンタップ
+        binding.toNumberSelection.setOnClickListener{ toNumberSelection() }
+    }
+
+    private fun toNumberSelection() {
+        val intent = Intent(this, NumberSelectionActivity::class.java)
+        startActivity(intent)
     }
 }
